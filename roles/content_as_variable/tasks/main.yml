@@ -1,0 +1,4 @@
+---
+ - name: define content as variable
+   shell: cat /etc/issue
+   register: cat_etc_issue

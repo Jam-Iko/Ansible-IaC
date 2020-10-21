@@ -1,0 +1,7 @@
+---
+ - name: Create empty file /etc/iaac with rights 0500
+   file:
+     path: "/etc/iaac"
+     force: no
+     state: touch
+     mode: 0500

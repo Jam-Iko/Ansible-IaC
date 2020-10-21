@@ -1,0 +1,15 @@
+---
+ - name: invoke role for /etc/iaac    
+   hosts: iaas
+   become: true
+   roles:
+    - create_file
+ - name: invoke role to define variables 
+   hosts: all
+   become: true
+   roles: 
+    - content_as_variable
+   tasks:
+    - name: print registered variables
+      debug:
+        msg: "{{ cat_etc_issue.stdout }}"
